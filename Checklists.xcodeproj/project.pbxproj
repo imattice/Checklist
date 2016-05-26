@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7F30C2B61CF66FE200F26C05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F30C2B51CF66FE200F26C05 /* AppDelegate.swift */; };
-		7F30C2B81CF66FE200F26C05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F30C2B71CF66FE200F26C05 /* ViewController.swift */; };
+		7F30C2B81CF66FE200F26C05 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F30C2B71CF66FE200F26C05 /* ChecklistViewController.swift */; };
 		7F30C2BB1CF66FE200F26C05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F30C2B91CF66FE200F26C05 /* Main.storyboard */; };
 		7F30C2BD1CF66FE200F26C05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F30C2BC1CF66FE200F26C05 /* Assets.xcassets */; };
 		7F30C2C01CF66FE200F26C05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F30C2BE1CF66FE200F26C05 /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		7F30C2B21CF66FE100F26C05 /* Checklists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F30C2B51CF66FE200F26C05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7F30C2B71CF66FE200F26C05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7F30C2B71CF66FE200F26C05 /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
 		7F30C2BA1CF66FE200F26C05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F30C2BC1CF66FE200F26C05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F30C2BF1CF66FE200F26C05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				7F30C2B51CF66FE200F26C05 /* AppDelegate.swift */,
-				7F30C2B71CF66FE200F26C05 /* ViewController.swift */,
+				7F30C2B71CF66FE200F26C05 /* ChecklistViewController.swift */,
 				7F30C2B91CF66FE200F26C05 /* Main.storyboard */,
 				7F30C2BC1CF66FE200F26C05 /* Assets.xcassets */,
 				7F30C2BE1CF66FE200F26C05 /* LaunchScreen.storyboard */,
@@ -96,6 +96,7 @@
 				TargetAttributes = {
 					7F30C2B11CF66FE100F26C05 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = VNA55J4REY;
 					};
 				};
 			};
@@ -135,7 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F30C2B81CF66FE200F26C05 /* ViewController.swift in Sources */,
+				7F30C2B81CF66FE200F26C05 /* ChecklistViewController.swift in Sources */,
 				7F30C2B61CF66FE200F26C05 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,10 +250,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Checklists/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.IkeMattice.Checklists;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -260,10 +264,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Checklists/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.IkeMattice.Checklists;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -19,27 +19,37 @@ class ChecklistViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 100
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ChecklistItem", forIndexPath: indexPath)
         
         let label = cell.viewWithTag(1000) as! UILabel
         
-        if indexPath.row == 0 {
+        if indexPath.row % 5 == 0 {
             label.text = "Walk the doge"
-        } else if indexPath.row == 1 {
+        } else if indexPath.row % 5 == 1 {
             label.text = "Brush Teef"
-        } else if indexPath.row == 2 {
+        } else if indexPath.row % 5 == 2 {
             label.text = "Learn iOS development"
-        } else if indexPath.row == 3 {
+        } else if indexPath.row % 5 == 3 {
             label.text = "DOTA practice"
-        } else if indexPath.row == 4 {
+        } else if indexPath.row % 5 == 4 {
             label.text = "Remind self that you should be learning iOS"
         }
         
     return cell
     }
-
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+            if cell.accessoryType == .None {
+                cell.accessoryType = .Checkmark
+            } else {
+                cell.accessoryType = .None
+            }
+        }
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 }
 

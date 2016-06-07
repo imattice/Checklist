@@ -24,7 +24,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQi-r9-5FK">
                                             <rect key="frame" x="8" y="11" width="553" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -55,7 +55,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="POQ-0c-sYe">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="voM-HT-SDr">
                                 <cells>
@@ -69,9 +69,10 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D9D-Sj-oIs">
                                                     <rect key="frame" x="14" y="7" width="479" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="done" destination="ePO-EC-C5H" eventType="editingDidEndOnExit" id="GA9-z2-1KO"/>
+                                                        <outlet property="delegate" destination="ePO-EC-C5H" id="PJH-IQ-HQQ"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -91,13 +92,14 @@
                                 <action selector="cancel" destination="ePO-EC-C5H" id="o6c-Aj-73v"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="9fE-cq-qEA">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="done" systemItem="done" id="9fE-cq-qEA">
                             <connections>
                                 <action selector="done" destination="ePO-EC-C5H" id="7N7-wG-x9D"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneBarButton" destination="9fE-cq-qEA" id="dI5-kN-FQm"/>
                         <outlet property="textField" destination="D9D-Sj-oIs" id="J1y-xH-tpP"/>
                     </connections>
                 </tableViewController>

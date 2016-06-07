@@ -52,33 +52,58 @@
         <scene sceneID="lps-E1-mB3">
             <objects>
                 <tableViewController id="ePO-EC-C5H" customClass="AddItemViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="POQ-0c-sYe">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="POQ-0c-sYe">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bKp-Gs-nbI">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bKp-Gs-nbI" id="Y5N-KL-iX7">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="voM-HT-SDr">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="bKp-Gs-nbI">
+                                        <rect key="frame" x="0.0" y="99" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bKp-Gs-nbI" id="Y5N-KL-iX7">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D9D-Sj-oIs">
+                                                    <rect key="frame" x="14" y="7" width="479" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                    <connections>
+                                                        <action selector="done" destination="ePO-EC-C5H" eventType="editingDidEndOnExit" id="GA9-z2-1KO"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="ePO-EC-C5H" id="jJu-DA-2da"/>
                             <outlet property="delegate" destination="ePO-EC-C5H" id="tFV-vX-pjb"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Item" id="yiZ-q6-bMD">
-                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="3p8-G8-cWN"/>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="9fE-cq-qEA"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="3p8-G8-cWN">
+                            <connections>
+                                <action selector="cancel" destination="ePO-EC-C5H" id="o6c-Aj-73v"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="9fE-cq-qEA">
+                            <connections>
+                                <action selector="done" destination="ePO-EC-C5H" id="7N7-wG-x9D"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textField" destination="D9D-Sj-oIs" id="J1y-xH-tpP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q3c-MA-NYn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1453" y="1163"/>
+            <point key="canvasLocation" x="1481" y="1111"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="G9O-vO-pqn">

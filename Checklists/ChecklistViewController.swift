@@ -68,6 +68,13 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
         dismissViewControllerAnimated(true, completion: nil)
     }
     func addItemViewController(controller: AddItemViewController, didFinishAddingItem item: ChecklistItem) {
+        let newRowIndex = items.count
+        items.append(item)
+        
+        let indexPath = NSIndexPath(forRow: newRowIndex, inSection: 0)
+        let indexPaths = [indexPath]
+        tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -113,18 +120,5 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
             
             controller.delegate = self
         }
-    }
-    
-    @IBAction func addItem() {
-        let newRowIndex = items.count
-        let item = ChecklistItem()
-            item.text = "I am a new row"
-            item.checked = false
-        
-        items.append(item)
-        
-        let indexPath = NSIndexPath(forRow: newRowIndex, inSection: 0)
-        let indexPaths = [indexPath]
-        tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
     }
 }

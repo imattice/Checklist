@@ -14,6 +14,7 @@
 		7F30C2C01CF66FE200F26C05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F30C2BE1CF66FE200F26C05 /* LaunchScreen.storyboard */; };
 		7F30C2CA1CF8E05C00F26C05 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F30C2C91CF8E05C00F26C05 /* ChecklistItem.swift */; };
 		7F75B46E1D062E13007823DD /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F75B46D1D062E13007823DD /* ItemDetailViewController.swift */; };
+		7F7B1A751D0B2A790023B4E2 /* AllListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7B1A741D0B2A790023B4E2 /* AllListsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		7F30C2C11CF66FE200F26C05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F30C2C91CF8E05C00F26C05 /* ChecklistItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 		7F75B46D1D062E13007823DD /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ItemDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		7F7B1A741D0B2A790023B4E2 /* AllListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllListsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				7F30C2B51CF66FE200F26C05 /* AppDelegate.swift */,
+				7F7B1A741D0B2A790023B4E2 /* AllListsViewController.swift */,
 				7F30C2B71CF66FE200F26C05 /* ChecklistViewController.swift */,
 				7F75B46D1D062E13007823DD /* ItemDetailViewController.swift */,
 				7F30C2C91CF8E05C00F26C05 /* ChecklistItem.swift */,
@@ -145,6 +148,7 @@
 				7F30C2B81CF66FE200F26C05 /* ChecklistViewController.swift in Sources */,
 				7F75B46E1D062E13007823DD /* ItemDetailViewController.swift in Sources */,
 				7F30C2CA1CF8E05C00F26C05 /* ChecklistItem.swift in Sources */,
+				7F7B1A751D0B2A790023B4E2 /* AllListsViewController.swift in Sources */,
 				7F30C2B61CF66FE200F26C05 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

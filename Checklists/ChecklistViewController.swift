@@ -14,6 +14,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     // but it does not actually create that array.
     // At this point, items does not have a value yet.
     var items: [ChecklistItem]
+    var checklist: Checklist!
 
     required init?(coder aDecoder: NSCoder) {
         
@@ -93,7 +94,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        title = checklist.name
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

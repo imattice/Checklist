@@ -22,14 +22,12 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate {
     
     var checklistToEdit: Checklist?
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange,
-                   replacementString string: String) -> Bool { 
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         let oldText: NSString = textField.text!
-        let newText: NSString = oldText.stringByReplacingCharactersInRange( range, withString: string)
+        let newText: NSString = oldText.stringByReplacingCharactersInRange(range, withString: string)
         doneBarButton.enabled = (newText.length > 0)
         return true
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

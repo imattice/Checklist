@@ -12,10 +12,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let dataModel = DataModel()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        let navigationController = window!.rootViewController as! UINavigationController
+        let controller = navigationController.viewControllers[0] as! AllListsViewController
+        
+        controller.dataModel = dataModel
+        
         return true
     }
 
@@ -40,10 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         saveData()
     }
     func saveData() {
-        let navigationController = window!.rootViewController as! UINavigationController
-        let controller = navigationController.viewControllers[0] as! AllListsViewController
-        
-        controller.saveChecklists()
+        dataModel.saveChecklists()
     }
 
 }

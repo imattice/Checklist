@@ -23,7 +23,6 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
         dismissViewControllerAnimated(true, completion: nil) }
     func listDetailViewController(controller: ListDetailViewController,
                                   didFinishAddingChecklist checklist: Checklist) {
-        let newRowIndex = dataModel.lists.count
         
         dataModel.lists.append(checklist)
         dataModel.sortChecklists()
@@ -69,6 +68,19 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
             performSegueWithIdentifier("ShowChecklist", sender: checklist)
         }
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowChecklist" {
+            let controller = segue.destinationViewController as! ChecklistViewController
+            
+            controller.checklist = sender as! Checklist
+        } else if segue.identifier == "AddChecklist" {
+            let navigationController = segue.destinationViewController as! UINavigationController 
+            let controller = navigationController.topViewController as! ListDetailViewController
+            
+            controller.delegate = self
+            controller.checklistToEdit = nil
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -80,7 +92,6 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
     }
     override func tableView(tableView: UITableView,
                             cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         
         let cell = cellForTableView(tableView)
         let checklist = dataModel.lists[indexPath.row]
@@ -96,6 +107,7 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
             cell.detailTextLabel!.text = "Complete!"
         }
         
+        cell.imageView!.image = UIImage(named: checklist.iconName)
         return cell
     }
     override func tableView(tableView: UITableView,
@@ -106,19 +118,6 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
         let checklist = dataModel.lists[indexPath.row]
         
         performSegueWithIdentifier("ShowChecklist", sender: checklist)
-    }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ShowChecklist" {
-            let controller = segue.destinationViewController as! ChecklistViewController
-            
-            controller.checklist = sender as! Checklist
-        } else if segue.identifier == "AddChecklist" {
-            let navigationController = segue.destinationViewController as! UINavigationController 
-            let controller = navigationController.topViewController as! ListDetailViewController
-            
-            controller.delegate = self
-            controller.checklistToEdit = nil
-        }
     }
     override func tableView(tableView: UITableView,
                             commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {

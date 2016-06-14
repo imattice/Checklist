@@ -16,7 +16,7 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
         if let cell = tableView.dequeueReusableCellWithIdentifier(cellItentifier) {
             return cell
         } else {
-            return UITableViewCell(style: .Default, reuseIdentifier: cellItentifier)
+            return UITableViewCell(style: .Subtitle, reuseIdentifier: cellItentifier)
         }
     }
     func listDetailViewControllerDidCancel(controller: ListDetailViewController) {
@@ -26,19 +26,15 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
         let newRowIndex = dataModel.lists.count
         
         dataModel.lists.append(checklist)
+        dataModel.sortChecklists()
+        tableView.reloadData()
         
-        let indexPath = NSIndexPath(forRow: newRowIndex, inSection: 0) 
-        let indexPaths = [indexPath] 
-        tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic) 
         dismissViewControllerAnimated(true, completion: nil)
     }
     func listDetailViewController(controller: ListDetailViewController,
                                   didFinishEditingChecklist checklist: Checklist) {
-        if let index = dataModel.lists.indexOf(checklist) {
-            let indexPath = NSIndexPath(forRow: index, inSection: 0) 
-            if let cell = tableView.cellForRowAtIndexPath(indexPath) {
-                cell.textLabel!.text = checklist.name }
-        }
+        dataModel.sortChecklists()
+        tableView.reloadData()
         dismissViewControllerAnimated(true, completion: nil) 
     }
     func navigationController(navigationController: UINavigationController,
@@ -56,6 +52,10 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -80,11 +80,21 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
     }
     override func tableView(tableView: UITableView,
                             cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
+        
+        
         let cell = cellForTableView(tableView)
         let checklist = dataModel.lists[indexPath.row]
         cell.textLabel!.text = checklist.name
         cell.accessoryType = .DetailDisclosureButton
+        
+        let remainingCount = checklist.countUncheckedItems()
+        if checklist.items.count == 0 {
+            cell.detailTextLabel!.text = "(No Items)"
+        } else if remainingCount > 0 {
+            cell.detailTextLabel!.text = "\(remainingCount) Remaining"
+        } else {
+            cell.detailTextLabel!.text = "Complete!"
+        }
         
         return cell
     }

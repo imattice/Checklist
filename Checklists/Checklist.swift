@@ -12,7 +12,7 @@ class Checklist: NSObject, NSCoding {
     var name = ""
     var iconName: String
     var items = [ChecklistItem]()
-    
+
 
     
     init(name: String, iconName: String) {
@@ -20,6 +20,8 @@ class Checklist: NSObject, NSCoding {
         self.iconName = iconName
         super.init()
     }
+    
+
     
     convenience init(name: String) {
         self.init(name: name, iconName: "No Icon")
@@ -31,6 +33,7 @@ class Checklist: NSObject, NSCoding {
         items = aDecoder.decodeObjectForKey("Items") as! [ChecklistItem]
         super.init()
     }
+    
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(name, forKey: "Name")

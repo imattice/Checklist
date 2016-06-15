@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--(Name of the Checklist)-->
@@ -27,13 +28,18 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQi-r9-5FK">
-                                            <rect key="frame" x="46" y="-2" width="487" height="43"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQi-r9-5FK">
+                                            <rect key="frame" x="38" y="11" width="495" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="rQi-r9-5FK" secondAttribute="trailing" id="Cmz-uF-LTq"/>
+                                        <constraint firstItem="rQi-r9-5FK" firstAttribute="centerY" secondItem="Okk-f3-qPi" secondAttribute="centerY" id="ZlS-tW-uAY"/>
+                                        <constraint firstItem="rQi-r9-5FK" firstAttribute="leading" secondItem="Okk-f3-qPi" secondAttribute="leadingMargin" constant="30" id="b6n-k3-7mo"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="KbM-qw-qdu" kind="presentation" identifier="EditItem" trigger="accessoryAction" id="dDr-Kk-9Hc"/>
@@ -75,8 +81,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D9D-Sj-oIs">
-                                                    <rect key="frame" x="14" y="7" width="479" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D9D-Sj-oIs">
+                                                    <rect key="frame" x="8" y="7" width="584" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="lUo-QS-n4Z"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
@@ -85,6 +94,11 @@
                                                     </connections>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="D9D-Sj-oIs" secondAttribute="trailing" constant="8" id="aQC-f3-bwQ"/>
+                                                <constraint firstItem="D9D-Sj-oIs" firstAttribute="top" secondItem="Y5N-KL-iX7" secondAttribute="top" constant="7" id="cLp-N7-11e"/>
+                                                <constraint firstItem="D9D-Sj-oIs" firstAttribute="leading" secondItem="Y5N-KL-iX7" secondAttribute="leading" constant="8" id="f4Q-cD-WTg"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -218,8 +232,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the List" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CEF-KA-MUE">
-                                                    <rect key="frame" x="8" y="7" width="471" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the List" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CEF-KA-MUE">
+                                                    <rect key="frame" x="8" y="7" width="584" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="dga-Ka-G2W"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
@@ -228,6 +245,11 @@
                                                     </connections>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CEF-KA-MUE" firstAttribute="top" secondItem="xbJ-T9-bh2" secondAttribute="top" constant="7" id="ezA-Pe-2U2"/>
+                                                <constraint firstItem="CEF-KA-MUE" firstAttribute="leading" secondItem="xbJ-T9-bh2" secondAttribute="leading" constant="8" id="jnc-pN-NUr"/>
+                                                <constraint firstAttribute="trailing" secondItem="CEF-KA-MUE" secondAttribute="trailing" constant="8" id="ufd-Qj-D6w"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -330,4 +352,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="dDr-Kk-9Hc"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.015686274509803921" green="0.66274509803921566" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -16,24 +16,28 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     var checklist: Checklist!
 
 
-    func configureCheckmarkForCell(cell: UITableViewCell, withChecklistItem item: ChecklistItem) {
+    func configureCheckmarkForCell(cell: UITableViewCell, 
+                                   withChecklistItem item: ChecklistItem) {
         
         let label = cell.viewWithTag(1001) as! UILabel
+        label.textColor = view.tintColor
         
         if item.checked {
             label.text = "✔️"
         } else {
             label.text = ""
-        }    
+        }
     }
-    func configureTextForCell(cell: UITableViewCell, withChecklistItem item: ChecklistItem) {
+    func configureTextForCell(cell: UITableViewCell, 
+                              withChecklistItem item: ChecklistItem) {
         let label = cell.viewWithTag(1000) as! UILabel
         label.text = item.text
     }
     func itemDetailViewControllerDidCancel(controller: ItemDetailViewController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-    func itemDetailViewController(controller: ItemDetailViewController, didFinishAddingItem item: ChecklistItem) {
+    func itemDetailViewController(controller: ItemDetailViewController, 
+                                  didFinishAddingItem item: ChecklistItem) {
         let newRowIndex = checklist.items.count
         checklist.items.append(item)
         
@@ -44,7 +48,8 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         dismissViewControllerAnimated(true, completion: nil)
         
     }
-    func itemDetailViewController(controller: ItemDetailViewController, didFinishEditingItem item: ChecklistItem) {
+    func itemDetailViewController(controller: ItemDetailViewController, 
+                                  didFinishEditingItem item: ChecklistItem) {
         if let index = checklist.items.indexOf(item) {
             let indexPath = NSIndexPath(forRow: index, inSection: 0)
             if let cell = tableView.cellForRowAtIndexPath(indexPath) {
